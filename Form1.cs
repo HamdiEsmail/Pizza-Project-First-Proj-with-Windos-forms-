@@ -102,7 +102,69 @@ namespace Pizza_Project
 
         }
 
+        void GetLabelTopping() {
+            string Topping="";
+            if (cbExtraCheese.Checked) {
+                Topping = "Extra Cheese ";
+            }
+            if (cbOnion.Checked) {
+                Topping += ", Onion";
+            }
+            if (cbMashrooms.Checked) {
+                Topping += ", Mashrooms";
 
+
+            }
+            if (cbOlives.Checked) {
+            
+                Topping += "\n, Olives";
+
+            }
+            if (cbTomatoes.Checked) {
+                Topping += ", Tomatoes";
+
+            }
+            if (cbGreenPeppers.Checked) {
+                Topping += "\n, Green Peppers";
+
+            }
+            if (Topping.StartsWith(",")) {
+                Topping = Topping.Substring(1, (Topping.Length-1)).Trim();
+            }
+            if (Topping=="") {
+            labTopping.Text = "No Topping";
+
+            } else labTopping.Text = Topping;
+
+        }
+        float GetToppingPrice() {
+            float ToppingPrice=0;
+            if (cbExtraCheese.Checked) {
+                ToppingPrice += Convert.ToSingle(cbExtraCheese.Tag);
+            }
+            if (cbOnion.Checked) {
+                ToppingPrice += Convert.ToSingle(cbOnion.Tag);
+
+            }
+            if (cbMashrooms.Checked) {
+                ToppingPrice += Convert.ToSingle(cbMashrooms.Tag);
+
+            }
+            if (cbOlives.Checked) {
+                ToppingPrice += Convert.ToSingle(cbOlives.Tag);
+
+            }
+            if (cbTomatoes.Checked) {
+                ToppingPrice += Convert.ToSingle(cbTomatoes.Tag);
+            }
+            if (cbGreenPeppers.Checked) {
+            
+                ToppingPrice += Convert.ToSingle(cbGreenPeppers.Tag);
+
+            }
+            return ToppingPrice;
+
+        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -116,12 +178,14 @@ namespace Pizza_Project
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-        
+            GetLabelTopping();
+
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-         
+            GetLabelTopping();
+
 
         }
 
@@ -182,7 +246,7 @@ namespace Pizza_Project
 
         private void cbExtraCheese_CheckedChanged(object sender, EventArgs e)
         {
-          
+            GetLabelTopping();
 
 
 
@@ -204,7 +268,8 @@ namespace Pizza_Project
 
         private void cbMashrooms_CheckedChanged(object sender, EventArgs e)
         {
-          
+            GetLabelTopping();
+
         }
 
         private void TotalPrice_Click(object sender, EventArgs e)
@@ -215,12 +280,14 @@ namespace Pizza_Project
 
         private void cbOlives_CheckedChanged(object sender, EventArgs e)
         {
-         
+            GetLabelTopping();
+
         }
 
         private void cbGreenPeppers_CheckedChanged(object sender, EventArgs e)
         {
-            
+            GetLabelTopping();
+
         }
 
         private void none_Enter(object sender, EventArgs e)
