@@ -76,7 +76,31 @@ namespace Pizza_Project
 
         }
 
+        void GetWhereToEat() {
+            if (rbEatIn.Checked)
+            {
+                LabWhereToEat.Text = "Eat In";
 
+            }
+            else { 
+                LabWhereToEat.Text = "Take Out";
+
+            }
+
+        }
+
+        float GetWhereToEatPrice() {
+            if (rbEatIn.Checked)
+            {
+                return Convert.ToSingle(rbEatIn.Tag);
+            }
+            else { 
+                return Convert.ToSingle(rbTakeOut.Tag);
+
+
+            }
+
+        }
 
 
 
@@ -166,13 +190,14 @@ namespace Pizza_Project
 
         private void rbEatIn_CheckedChanged(object sender, EventArgs e)
         {
-           
+            GetWhereToEat();
            
             
         }
 
         private void rbTakeOut_CheckedChanged(object sender, EventArgs e)
         {
+            GetWhereToEat();
           
 
             }
