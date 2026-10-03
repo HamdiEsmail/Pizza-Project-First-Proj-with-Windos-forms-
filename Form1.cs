@@ -32,7 +32,7 @@ namespace Pizza_Project
             ;
         
         }
-        float GetLabelSizePrice() {
+        float GetSizePrice() {
             if (rbSmall.Checked)
             {
                 return Convert.ToSingle(rbSmall.Tag);
@@ -165,7 +165,9 @@ namespace Pizza_Project
             return ToppingPrice;
 
         }
-
+        float GetTotalPrice() {
+            return GetToppingPrice() + GetWhereToEatPrice() + GetCrustTypePrice() + GetSizePrice();
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -179,12 +181,14 @@ namespace Pizza_Project
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
         }
@@ -207,7 +211,7 @@ namespace Pizza_Project
         private void btnSmall_CheckedChanged(object sender, EventArgs e)
         {
             GetLableSize();
-
+            LabTotalPrice.Text ="$"+ GetTotalPrice().ToString();
 
 
         }
@@ -216,6 +220,7 @@ namespace Pizza_Project
         {
             GetLableSize();
 
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
 
@@ -226,6 +231,7 @@ namespace Pizza_Project
         {
             GetLableSize();
 
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
         }
@@ -233,6 +239,7 @@ namespace Pizza_Project
         private void rbThin_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelCrustType();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
         }
@@ -240,6 +247,7 @@ namespace Pizza_Project
         private void rdThick_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelCrustType();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
         }
@@ -247,6 +255,7 @@ namespace Pizza_Project
         private void cbExtraCheese_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
 
 
@@ -255,20 +264,23 @@ namespace Pizza_Project
         private void rbEatIn_CheckedChanged(object sender, EventArgs e)
         {
             GetWhereToEat();
-           
-            
+            LabTotalPrice.Text ="$"+ GetTotalPrice().ToString();
+
+
         }
 
         private void rbTakeOut_CheckedChanged(object sender, EventArgs e)
         {
             GetWhereToEat();
-          
+            LabTotalPrice.Text ="$"+ GetTotalPrice().ToString();
 
-            }
+
+        }
 
         private void cbMashrooms_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
         }
 
@@ -281,12 +293,14 @@ namespace Pizza_Project
         private void cbOlives_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
         }
 
         private void cbGreenPeppers_CheckedChanged(object sender, EventArgs e)
         {
             GetLabelTopping();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
         }
 
@@ -297,8 +311,18 @@ namespace Pizza_Project
 
         private void btnOrderPizza_Click(object sender, EventArgs e)
         {
-          
+
+            if (MessageBox.Show("Are you sure to confirm ? ", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
+
+                MessageBox.Show("Order Placed Successfuly ");
+            
+            gbSize.Enabled = false;
+            gbToppings.Enabled = false;
+            gbWhereToEat.Enabled = false;
+            gbCrustType.Enabled = false;
            
+            
+            } ;
         }
 
         private void btnResetForm_Click(object sender, EventArgs e)
