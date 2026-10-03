@@ -168,6 +168,25 @@ namespace Pizza_Project
         float GetTotalPrice() {
             return GetToppingPrice() + GetWhereToEatPrice() + GetCrustTypePrice() + GetSizePrice();
         }
+        void resetButton() {
+            gbSize.Enabled = true;
+            gbToppings.Enabled = true;
+            gbWhereToEat.Enabled = true;
+            gbCrustType.Enabled = true;
+
+            rbSmall.Checked = true;
+            rbThin.Checked = true;
+            rbEatIn.Checked = true;
+
+            cbExtraCheese.Checked = false;
+            cbMashrooms.Checked = false;
+            cbOnion.Checked = false;
+            cbGreenPeppers.Checked = false;
+            cbTomatoes.Checked = false;
+            cbOlives.Checked = false;
+
+
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -327,7 +346,13 @@ namespace Pizza_Project
 
         private void btnResetForm_Click(object sender, EventArgs e)
         {
-           
+
+            if (MessageBox.Show("Are You Sure To Reset Order ?", "Reset", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) { 
+            
+            resetButton();
+               
+            }
+
 
         }
 
