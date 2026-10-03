@@ -50,9 +50,34 @@ namespace Pizza_Project
 
 
         }
-     
-       
-        
+
+        void GetLabelCrustType() {
+            if (rbThick.Checked)
+            {
+                labCrustType.Text = "Thick";
+            }
+            else { 
+            
+                labCrustType.Text = "Thin";
+
+            }
+
+        }
+        float GetCrustTypePrice() {
+            if (rbThick.Checked)
+            {
+                return Convert.ToSingle(rbThick.Tag);
+            }
+            else { 
+            
+                return Convert.ToSingle(rbThin.Tag);
+
+            }
+
+        }
+
+
+
 
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -119,14 +144,15 @@ namespace Pizza_Project
 
         private void rbThin_CheckedChanged(object sender, EventArgs e)
         {
-           
+            GetLabelCrustType();
 
 
         }
 
         private void rdThick_CheckedChanged(object sender, EventArgs e)
         {
-           
+            GetLabelCrustType();
+
 
         }
 
