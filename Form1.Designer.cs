@@ -70,7 +70,7 @@
             // btnOrderPizza
             // 
             this.btnOrderPizza.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnOrderPizza.Location = new System.Drawing.Point(275, 424);
+            this.btnOrderPizza.Location = new System.Drawing.Point(264, 424);
             this.btnOrderPizza.Name = "btnOrderPizza";
             this.btnOrderPizza.Size = new System.Drawing.Size(93, 25);
             this.btnOrderPizza.TabIndex = 4;
@@ -81,7 +81,7 @@
             // btnResetForm
             // 
             this.btnResetForm.BackColor = System.Drawing.Color.Crimson;
-            this.btnResetForm.Location = new System.Drawing.Point(400, 424);
+            this.btnResetForm.Location = new System.Drawing.Point(374, 424);
             this.btnResetForm.Name = "btnResetForm";
             this.btnResetForm.Size = new System.Drawing.Size(98, 25);
             this.btnResetForm.TabIndex = 5;
