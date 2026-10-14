@@ -166,7 +166,8 @@ namespace Pizza_Project
 
         }
         float GetTotalPrice() {
-            return GetToppingPrice() + GetWhereToEatPrice() + GetCrustTypePrice() + GetSizePrice();
+            float Temp= GetToppingPrice() + GetWhereToEatPrice() + GetCrustTypePrice() + GetSizePrice() ;
+            return Temp * (float)numericUpDown1.Value;
         }
         void resetButton() {
             gbSize.Enabled = true;
@@ -358,6 +359,13 @@ namespace Pizza_Project
 
         private void labSize_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            GetTotalPrice();
+            LabTotalPrice.Text = "$" + GetTotalPrice().ToString();
 
         }
     }

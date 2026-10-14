@@ -60,11 +60,14 @@
             this.gbWhereToEat = new System.Windows.Forms.GroupBox();
             this.rbTakeOut = new System.Windows.Forms.RadioButton();
             this.rbEatIn = new System.Windows.Forms.RadioButton();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.gbOrderSummary.SuspendLayout();
             this.gbSize.SuspendLayout();
             this.gbCrustType.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOrderPizza
@@ -431,9 +434,9 @@
             this.gbWhereToEat.Controls.Add(this.rbTakeOut);
             this.gbWhereToEat.Controls.Add(this.rbEatIn);
             this.gbWhereToEat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbWhereToEat.Location = new System.Drawing.Point(248, 319);
+            this.gbWhereToEat.Location = new System.Drawing.Point(248, 291);
             this.gbWhereToEat.Name = "gbWhereToEat";
-            this.gbWhereToEat.Size = new System.Drawing.Size(250, 88);
+            this.gbWhereToEat.Size = new System.Drawing.Size(250, 69);
             this.gbWhereToEat.TabIndex = 3;
             this.gbWhereToEat.TabStop = false;
             this.gbWhereToEat.Text = "Where To Eat";
@@ -466,11 +469,34 @@
             this.rbEatIn.UseVisualStyleBackColor = true;
             this.rbEatIn.CheckedChanged += new System.EventHandler(this.rbEatIn_CheckedChanged);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(281, 382);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(174, 20);
+            this.numericUpDown1.TabIndex = 8;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(245, 366);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Total Pizza";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 478);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.gbWhereToEat);
             this.Controls.Add(this.gbCrustType);
             this.Controls.Add(this.gbToppings);
@@ -491,6 +517,7 @@
             this.gbToppings.PerformLayout();
             this.gbWhereToEat.ResumeLayout(false);
             this.gbWhereToEat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,6 +556,8 @@
         private System.Windows.Forms.GroupBox gbWhereToEat;
         private System.Windows.Forms.RadioButton rbTakeOut;
         private System.Windows.Forms.RadioButton rbEatIn;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label6;
     }
 }
 
