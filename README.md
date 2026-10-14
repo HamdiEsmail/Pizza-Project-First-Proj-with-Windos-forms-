@@ -70,8 +70,6 @@ This project allows the user to customize a pizza by selecting the size, crust t
 
 4. Run the application.
 
-## 👨‍💻 Author
 
-**Hamdi Ismail**
 
 Learning **C# / .NET** and working toward becoming a Full-Stack Developer.
